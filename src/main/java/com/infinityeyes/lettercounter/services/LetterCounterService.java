@@ -8,6 +8,6 @@ import org.springframework.stereotype.Service;
 public interface LetterCounterService {
 
 
-    CountedLetter countLetters(String stringToParse, char letterToCount);
+    CountedLetter countLetters(String stringToParse, String letterToCount);
 
 }

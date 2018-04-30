@@ -13,7 +13,7 @@ import lombok.Setter;
 public class CountedLetter {
 
     private String sentence;
-    private char letter;
+    private String letter;
     private int count;
 
 }

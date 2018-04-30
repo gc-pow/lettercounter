@@ -19,8 +19,8 @@ public class LetterCounterController {
         this.letterCounterService = letterCounterService;
     }
     @ApiOperation(value = "Counts how many times a letter repeats", notes = "")
-    @PostMapping(value = "/{letter}")
-    public ResponseEntity<CountedLetter> countLetters(String stringToParse, @PathVariable char letterToCount) {
+    @PostMapping
+    public ResponseEntity<CountedLetter> countLetters(String stringToParse, String letterToCount) {
         return new ResponseEntity<>(letterCounterService.countLetters(stringToParse,letterToCount), HttpStatus.OK);
     }
 
