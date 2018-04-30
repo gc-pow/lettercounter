@@ -1,14 +1,28 @@
 package com.infinityeyes.lettercounter.controllers;
 
+import com.infinityeyes.lettercounter.services.LetterCounterService;
+import com.infinityeyes.lettercounter.services.domain.CountedLetter;
 import io.swagger.annotations.Api;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/count")
-@Api(description = "crypto events api")
+@Api(description = "letter counting api")
 public class LetterCounterController {
 
+    private LetterCounterService letterCounterService;
+
+    public LetterCounterController(LetterCounterService letterCounterService){
+        this.letterCounterService = letterCounterService;
+    }
+    @ApiOperation(value = "Counts how many times a letter repeats", notes = "")
+    @PostMapping(value = "/{letter}")
+    public ResponseEntity<CountedLetter> countLetters(String stringToParse, @PathVariable char letterToCount) {
+        return new ResponseEntity<>(letterCounterService.countLetters(stringToParse,letterToCount), HttpStatus.OK);
+    }
 
 
 }
