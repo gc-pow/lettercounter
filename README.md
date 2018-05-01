@@ -6,6 +6,18 @@ Spring application for technical interview purposes
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
+```
+git clone https://github.com/gc-pow/lettercounter/tree/master
+```
+to run it type:
+```
+./mvnw spring-boot:run
+```
+to test out the API visit:
+```
+http://localhost:8080/swagger-ui.html
+```
+
 ### Prerequisites
 
 What things you need to install the software and how to install them
